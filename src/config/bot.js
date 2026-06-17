@@ -543,31 +543,6 @@ export function getRandomColor() {
 
 export default botConfig;
 
-client.on("messageCreate", async (message) => {
-    if (message.author.bot) return;
-
-    const config = getConfig();
-    const prefix = config.prefix;
-
-    if (!message.content.startsWith(prefix)) return;
-
-    const args = message.content.slice(prefix.length).trim().split(/ +/);
-    const command = args.shift().toLowerCase();
-
-    // COMMAND SETPREFIX
-    if (command === "setprefix") {
-        if (!message.member.permissions.has("Administrator")) {
-            return message.reply("❌ Tu dois être administrateur.");
-        }
-
-        const newPrefix = args[0];
-
-        if (/newPrefix) {
-            return message.reply("❌ Donne un nouveau préfixe.");
-        }
-
-        setPrefix(newPrefix);
-
-        return message.channel.send(`✔ Nouveau préfixe : \`${newPrefix}\``);
-    }
-});
+{
+  "prefix": "!"
+}
