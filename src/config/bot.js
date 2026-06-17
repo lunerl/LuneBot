@@ -543,6 +543,6 @@ export function getRandomColor() {
 
 export default botConfig;
 
-
+bot = commands.Bot(command_prefix="!")
 
 
