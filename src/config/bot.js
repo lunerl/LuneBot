@@ -1,7 +1,5 @@
 import { logger } from '../utils/logger.js';
 
-const prefix = "!";
-
 export const botConfig = {
   // =========================
   // BOT PRESENCE (what users see under the bot name)
