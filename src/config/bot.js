@@ -1,5 +1,4 @@
 import { logger } from '../utils/logger.js';
-const fs = require("fs");
 
 let prefix = "!";
 
