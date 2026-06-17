@@ -1,5 +1,28 @@
 import { logger } from '../utils/logger.js';
+const fs = require("fs");
 
+let prefix = "!";
+
+client.on("messageCreate", async (message) => {
+    if (message.author.bot) return;
+
+    if (message.content.startsWith(`${prefix}setprefix`)) {
+        if (!message.member.permissions.has("Administrator")) {
+            return message.reply("Vous devez être administrateur.");
+        }
+
+        const args = message.content.split(" ");
+        const newPrefix = args[1];
+
+        if (!newPrefix) {
+            return message.reply("Indiquez un nouveau préfixe.");
+        }
+
+        prefix = newPrefix;
+
+        message.channel.send(`Préfixe changé en \`${prefix}\``);
+    }
+});
 export const botConfig = {
   // =========================
   // BOT PRESENCE (what users see under the bot name)
