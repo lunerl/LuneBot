@@ -1,5 +1,6 @@
 import { logger } from '../utils/logger.js';
 
+const prefix = "!";
 
 export const botConfig = {
   // =========================
